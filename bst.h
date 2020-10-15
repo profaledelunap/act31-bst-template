@@ -1,10 +1,8 @@
-/*
- * bst.h
- *
- *  Created on: 30/10/2015
- *      Author: clase
- */
-
+// =================================================================
+// File: bst.h
+// Author:
+// Date:
+// =================================================================
 #ifndef BST_H
 #define BST_H
 
@@ -60,17 +58,11 @@ Node<T>::Node(T val, Node<T> *le, Node<T> *ri)
 	: value(val), left(le), right(ri) {}
 
 template <class T>
-bool Node<T>::find(T val) {
+bool Node<T>::find(T val) const {
 	if (val == value) {
 		return true;
 	} else if (val < value) {
 		return (left != NULL && left->find(val));
-		/* if (left == NULL) {
-			return false;
-		} else {
-				return left->find(val);
-	  }
-		*/
 	} else {
 		return (right != NULL && right->find(val));
 	}
@@ -94,16 +86,6 @@ uint Node<T>::depth() const {
         ri = right->depth();
     }
 		return (max(le, ri) + 1);
-    /*
-		 de = (le > ri)? le : ri;
-		 return (de + 1);
-		*/
-		/* if (le > r1) {
-			return le + 1;
-		} else {
-			return ri + 1;
-	 }
-   */
 }
 
 template <class T>
@@ -246,18 +228,41 @@ void Node<T>::preOrder(stringstream &aux) const {
 	}
 }
 
+// =================================================================
+// Returns how many leaves are below the current node. Remember that
+// a node without children is a leaf.
+//
+// @return the number of leaves below the current node.
+// =================================================================
 template <class T>
 uint Node<T>::leaves() const {
+	//TO DO
 	return 0;
 }
 
+// =================================================================
+// Returns if a node is full. A node is said to be complete if:
+// a) it is a leaf, b) they have both children, both children are
+// full and both children have the same depth.
+//
+// @return true if the node is complete, false otherwise.
+// =================================================================
 template <class T>
 bool Node<T>::isFull() const {
+	//TO DO
 	return false;
 }
 
+// =================================================================
+// Returns the ancestors (parent) of the value * val *.
+//
+// @return the ancestor (father) of * val *.
+// @throw NoSuchElement if the * val * element is not inside the
+//				tree.
+// =================================================================
 template <class T>
 T Node<T>::ancestor(T val) const {
+	//TO DO
 	return T();
 }
 
@@ -392,26 +397,65 @@ string BST<T>::postOrder() const {
 	return aux.str();
 }
 
+// =================================================================
+// Returns the level traversal of the tree.
+//
+// @return a string with the level traversal of the tree.
+// =================================================================
 template <class T>
 string BST<T>::byLevel() const {
 	stringstream aux;
-
+	//TO DO
 	return aux.str();
 }
 
+// =================================================================
+// Returns how many leaves are below the root node.
+//
+// @return the number of leaves below the root node. If the tree is
+// 				 empty, it returns 0.
+// =================================================================
 template <class T>
 uint BST<T>::leaves() const {
+	if (!empty()) {
+		return root->leaves();
+	}
 	return 0;
 }
 
+// =================================================================
+// Returns if a tree is full. A tree is said to be complete if root
+// is full.
+//
+// @return true if the node is complete, false otherwise.
+// =================================================================
 template <class T>
 bool BST<T>::isFull() const {
+	if (!empty()) {
+		return root->isFull();
+	}
 	return false;
 }
 
+// =================================================================
+// The ancestor of * val * ¨ returns.
+//
+// @return the ancestor (father) of * val *.
+// @throw NoSuchElement if the * val * element is not inside the
+//				tree or if the searched value is in the root or the tree
+//				is empty.
+// =================================================================
 template <class T>
 T BST<T>::ancestor(T val) const {
-	return T();
+	if (!empty()) {
+		if (root->value == val) {
+			return val;
+		} else {
+			return root->ancestor(val);
+		}
+	} else {
+		throw NoSuchElement();
+	}
 }
 
 #endif /* BST_H */

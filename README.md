@@ -1,4 +1,4 @@
-# Act 2.3 - Actividad Integral estructura de datos lineales (Evidencia Competencia)
+# Act 3.1 - Operaciones avanzadas en un BST
 
 ## <span style="color: rgb(26, 99, 169);">¿Qué tengo que hacer?</span>
 Diseña e implementa en forma <span style="text-decoration-line: underline;">forma individual</span>, las funciones que resuelvan los problemas que se describen a continuación.
@@ -6,46 +6,24 @@ Diseña e implementa en forma <span style="text-decoration-line: underline;">for
 En la parte superior del archivo coloca, en comentarios, tus datos. Por ejemplo:
 ```
 // =========================================================
-// File: activity.h
+// File: bst.h
 // Author:
 // Date:
 // =========================================================
 ```
 Las funciones que debes implementar son:
 
- - ``` bool balancedBrackets(const string &expr)```
- Devuelve ```true``` si el string  ```expr``` que recibe como parámetro contiene una expresión en donde todos sus símbolos de agrupación (paréntesis ```()```, corchetes ```[]``` y llaves ```{}```) están correctamente anidados y balanceados. Devuelve ```false``` en caso contrario. Se debe ignorar cualquier carácter de ```expr``` que no sea paréntesis, corchetes o llaves.
+ - ``` template <class T> string BST<T>::byLevel()```
+ Devuelve un string conteniendo el recorrido por niveles del árbol.
 
-<br> **Descripción del algoritmo:** Empieza con una pila vacía. Recorre cada uno de los caracteres de ```expr``` de izquierda a derecha:
- - Si encuentras un símbolo de apertura (```(```, ```[``` o ```{```) debes insertarlo en la pila.
- - Si encuentras un carácter de cierre (```)```, ```]``` o ```}```) debes remover el carácter del tope de la pila y verificar que ambos caracteres hagan pareja. Debes terminar el algoritmo con ```false``` si los respectivos caracteres no hacen pareja, o si la pila estaba vacía antes de intentar remover el elemento del tope.
-
-<br> Si al final la pila está vacía debes devolver ```true```, de otra forma debes devolver ```false```.
-
-2. ```string convertInfixToPostfix(const string &expr) ```
-Recibe como parámetro un string,  ```expr```, que contiene una expresión aritmética en notación infija. Devuelve un string con la expresión equivalente en notación posfija. No realiza ningún tipo de validación respecto a la expresión de entrada.
-
-<br>Para implementar este algoritmo, deberás emplear dos funciones auxiliares que **ya se encuentran implementadas**:
-
- - La función ```tokenize``` que recibe un string y lo separa en sus elementos básicos, colocándolos en una fila de strings. Por ejemplo, si la entrada es el string "123 34 7+*-", entonces devuelve una fila con los siguientes elementos: "123", "34", "7", "+", "*" y "-".
- - La función ```hasHigherPrecedence``` que determina si el elemento del tope de la pila tiene mayor precedencia que el operador op.
-
-<br>**Descripción del algoritmo:** Empieza con una pila vacía y una fila resultante vacía. Toma los elementos de ```expr``` de la lista generada por ```tokenize``` y procesa dichos elementos en orden FIFO:
-
- - Si encuentras un número, insértalo en la fila resultante.
- - Si encuentras un paréntesis izquierdo ```(```, insértalo en la pila.
- - Si encuentras un operador ⊗ (donde ⊗ puede ser ```+```, ```-```, ```*``` o ```/)```, realiza lo siguiente:
-    - Mientras que la pila no esté vacía y además el tope de la pila sea diferente al paréntesis izquierdo ```(```, realiza lo siguiente:
-        - Si el elemento del tope de la pila tiene mayor precedencia que ⊗, entonces hay que sacar dicho elemento de la pila e insertarlo en la fila resultante. De lo contrario se debe terminar el ciclo «mientras» más anidado. Si el elemento del tope de la pila tiene mayor precedencia que ⊗, entonces hay que sacar dicho elemento de la pila e insertarlo en la fila resultante. De lo contrario se debe terminar el ciclo «mientras» más anidado.
-    - Inserta ⊗ en la pila.
- - Si encuentras un paréntesis derecho ```)```, realiza lo siguiente:
-     - Mientras que la pila no esté vacía y además el tope de la pila sea diferente al paréntesis izquierdo ```(```, realiza lo siguiente:
-         - Saca el elemento del tope de la pila e insértalo en la fila resultante.
-     - Si la pila no está vacía, remueve el paréntesis izquierdo ```(``` del tope de la pila.
-
-<br>Si, al llegar a este punto, la pila no está vacía, remueve uno por uno todos elementos de la pila e insértalos en la fila resultante.
-
-<br>Finalmente, devuelve una cadena conformada por la concatenación de todos los elementos de la fila resultante, usando un espacio en blanco como separador entre elementos.
+2. ```template <class T> uint Node<T>::leaves() const```
+Regresa la cantidad de hojas que están por debajo del nodo actual. Recuerda que un nodo sin hijo es una hoja. En caso contrario, se deberá regresa la cantidad de hojas del hijo izquierdo más las hojas que están en el lado derecho.
+3. ```template <class T> bool Node<T>::isFull() const```
+Regresa verdadero si el nodo actual es la base de un subárbol completo. En cualquier otro caso, regresa falso. Un árbol se considera completo si:
+	- El nodo es una hoja.
+	- El nodo tiene ambos hijos, sus dos hijos son la base de un subárbol completo y ambos hijos tienen la misma profundidad.
+4. ```template <class T> T Node<T>::ancestor(T val) const```
+Regresa el valor almacenado en el nodo padre del nodo que contiene *val*. Si *val* no se encuentra en el árbol, deberá lanzar la excepción *NoSuchElement*. **Tip:** La estrategia más sencilla para resolver este problema es que el padre pregunte por el valor almacenado del hijo.
 
 <br>Todas las funcionalidades deberán de estar correctamente alineadas y documentadas.&nbsp; Recuerda que todas las funcionalidades deberán pasar exitosamente todas las pruebas. Como parte de la documentación deberá incluirse la complejidad de cada una de ellas.
 

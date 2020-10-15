@@ -3,7 +3,7 @@
 #include "catch.hpp"
 #include "bst.h"
 
-TEST_CASE("testing byLevel", "[byLevel]") {
+TEST_CASE("testing isFull", "[isFull]") {
 	int adding[] = {50, 25, 75, 12, 40, 60, 80, 5, 18, 30, 45, 55, 80};
   BST<int> b1, b2, b3;
 
@@ -14,7 +14,7 @@ TEST_CASE("testing byLevel", "[byLevel]") {
     b3.add(adding[i]);
   }
 
-	REQUIRE(b1.byLevel() == "[]");
-	REQUIRE(b2.byLevel() == "[50 25 75 12 40 60 80 ]");
-	REQUIRE(b3.byLevel() == "[50 25 75 12 40 60 80 5 18 30 45 55 ]");
+	REQUIRE(b1.isFull() == false);
+	REQUIRE(b2.isFull() == true);
+	REQUIRE(b3.isFull() == false);
 }
