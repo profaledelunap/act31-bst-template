@@ -449,7 +449,7 @@ template <class T>
 T BST<T>::ancestor(T val) const {
 	if (!empty()) {
 		if (root->value == val) {
-			return val;
+			throw NoSuchElement();
 		} else {
 			return root->ancestor(val);
 		}
