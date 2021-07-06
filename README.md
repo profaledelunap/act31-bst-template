@@ -1,16 +1,17 @@
+![Tec de Monterrey](images/logotecmty.png)
 # Act 3.1 - Operaciones avanzadas en un BST
 
 ## <span style="color: rgb(26, 99, 169);">¿Qué tengo que hacer?</span>
-Diseña e implementa en forma <span style="text-decoration-line: underline;">forma individual</span>, las funciones que resuelvan los problemas que se describen a continuación.
-
-En la parte superior del archivo coloca, en comentarios, tus datos. Por ejemplo:
+Accede a la siguiente liga: HTTP y acepta la tarea. Esto creará tu repositorio de trabajo. En él, encontrarás el archivo "bst.h" que deberás modificar para el desarrollo de esta actividad. Deberás colocar en la parte superior, en comentarios, tus datos. Por ejemplo:
 ```
 // =========================================================
 // File: bst.h
-// Author:
-// Date:
+// Author: Edward Elric - A00123456
+// Date: 01/01/2021
 // =========================================================
 ```
+Diseña e implementa, en forma <span style="text-decoration-line: underline;">forma individual</span>, las funciones que resuelvan los problemas que se describen a continuación.
+
 Las funciones que debes implementar son:
 
  - ``` template <class T> string BST<T>::byLevel()```
@@ -27,6 +28,15 @@ Regresa el valor almacenado en el nodo padre del nodo que contiene *val*. Si *va
 
 <br>Todas las funcionalidades deberán de estar correctamente alineadas y documentadas.&nbsp; Recuerda que todas las funcionalidades deberán pasar exitosamente todas las pruebas. Como parte de la documentación deberá incluirse la complejidad de cada una de ellas.
 
+Para probar tu implementación, ejecuta el comando:
+```
+make
+```
+Este comando compilará tu código y generará una serie de archivos de pruebas llamados "runTest#", donde # será un número de prueba. Para ejecutar prueba, solo deberás ejecutar el archivos correcto. Por ejemplo, si quiere revisar si mi código cumple con la prueba número 3, deberías ejecutar:
+```
+./runTest3
+```
+
 ## <span style="color: rgb(26, 99, 169);">**¿Bajo qué criterios se evalúa mi evidencia?**</span>
 
 - **80%** - Para cada una de las funcionalidades se evaluará:
@@ -41,4 +51,4 @@ Regresa el valor almacenado en el nodo padre del nodo que contiene *val*. Si *va
 - **10%** - Se respetan los nombres de las funciones en la aplicación.
 
 ## <span style="color: rgb(26, 99, 169);">**¿Dónde la entrego?**</span>
-Entrega los archivos correspondientes de la actividad, en el sitio de Github. Coloca la liga del repositorio en Canvas.
+Cuando hayas pasado todas las pruebas, recuerda publicar el código en tu repositorio (*git push*).
