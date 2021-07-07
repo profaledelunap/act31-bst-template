@@ -14,7 +14,7 @@ Diseña e implementa, en forma <span style="text-decoration-line: underline;">fo
 
 Las funciones que debes implementar son:
 
- - ``` template <class T> string BST<T>::byLevel()```
+ 1. ``` template <class T> string BST<T>::byLevel()```
  Devuelve un string conteniendo el recorrido por niveles del árbol.
 
 2. ```template <class T> uint Node<T>::leaves() const```
