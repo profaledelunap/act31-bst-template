@@ -56,11 +56,11 @@ make test3
   - Bien (40%) - evalúa correctamente 2 casos de prueba
   - Insuficientre (25%) - evalúa correctamente 1 o 0 casos de prueba.
 
--**10%** - Especifican en cada uno de las funcionalidades la complejidad computacional como parte de su documentación.
+- **10%** - Especifican en cada uno de las funcionalidades la complejidad computacional como parte de su documentación.
 
--**10%** - El código deberá seguir los lineamientos estipulados en el estándar de codificación: liga_estándar_codificación Descargar liga_estándar_codificación .
+- **10%** - El código deberá seguir los lineamientos estipulados en el estándar de codificación: liga_estándar_codificación Descargar liga_estándar_codificación .
 
--**10%** - Se respetenan los nombres de las funciones en la aplicación.
+- **10%** - Se respetenan los nombres de las funciones en la aplicación.
 
 ## <span style="color: rgb(26, 99, 169);">**¿Dónde la entrego?**</span>
 
