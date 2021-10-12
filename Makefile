@@ -18,7 +18,7 @@ ifneq ("$(wildcard ./mysolution3.txt)","")
 	rm mysolution3.txt
 endif
 	g++ -std=c++11 test3main.cpp -o test3main
-	./test3main > mysolution1.txt
+	./test3main > mysolution3.txt
 	g++ -std=c++11 test3.cpp -o test3
 	./test3
 
