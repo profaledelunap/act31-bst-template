@@ -1,54 +1,67 @@
 ![Tec de Monterrey](images/logotecmty.png)
+
 # Act 3.1 - Operaciones avanzadas en un BST
 
 ## <span style="color: rgb(26, 99, 169);">¿Qué tengo que hacer?</span>
-Accede a la siguiente liga: [Act. 3.1](https://classroom.github.com/a/lE-6ZuzC) y acepta la tarea. Esto creará tu repositorio de trabajo. En él, encontrarás el archivo "bst.h" que deberás modificar para el desarrollo de esta actividad. Deberás colocar en la parte superior, en comentarios, tus datos. Por ejemplo:
+
+En este repositorio ncontrarás el archivo "BST.h" que deberás modificar para el desarrollo de esta actividad. Deberás colocar en la parte superior, en comentarios, tus datos. Por ejemplo:
+
 ```
 // =========================================================
-// File: bst.h
+// File: BST.h
 // Author: Edward Elric - A00123456
 // Date: 01/01/2021
 // =========================================================
 ```
+
 Diseña e implementa, en forma <span style="text-decoration-line: underline;">forma individual</span>, las funciones que resuelvan los problemas que se describen a continuación.
 
 Las funciones que debes implementar son:
 
- 1. ``` template <class T> string BST<T>::byLevel()```
- Devuelve un string conteniendo el recorrido por niveles del árbol.
+1. ` void BST::print()`
+   Desplegará cada uno de los datos almacenados en el BST dependiendo del parámetro en entrada:
 
-2. ```template <class T> uint Node<T>::leaves() const```
-Regresa la cantidad de hojas que están por debajo del nodo actual. Recuerda que un nodo sin hijo es una hoja. En caso contrario, se deberá regresa la cantidad de hojas del hijo izquierdo más las hojas que están en el lado derecho.
-3. ```template <class T> bool Node<T>::isFull() const```
-Regresa verdadero si el nodo actual es la base de un subárbol completo. En cualquier otro caso, regresa falso. Un árbol se considera completo si:
-	- El nodo es una hoja.
-	- El nodo tiene ambos hijos, sus dos hijos son la base de un subárbol completo y ambos hijos tienen la misma profundidad.
-4. ```template <class T> T Node<T>::ancestor(T val) const```
-Regresa el valor almacenado en el nodo padre del nodo que contiene *val*. Si *val* no se encuentra en el árbol, deberá lanzar la excepción *NoSuchElement*. **Tip:** La estrategia más sencilla para resolver este problema es que el padre pregunte por el valor almacenado del hijo.
+- Preorder
+- Inorder
+- Postorder
+- Level by level
+
+2. ` void BST::height()`
+   Regresará la altura del BST.
+3. ` void BST::ancestors(NodeBST node)`
+   Desplegará los ancestros de un dato.
+4. ` void BST::getLevel(NodeBST node`
+   Regresará un entero que indica el nivel en que se encuentra un dato, o -1 en caso de que no se encuentre en el BST.
 
 <br>Todas las funcionalidades deberán de estar correctamente alineadas y documentadas.&nbsp; Recuerda que todas las funcionalidades deberán pasar exitosamente todas las pruebas. Como parte de la documentación deberá incluirse la complejidad de cada una de ellas.
 
 Para probar tu implementación, ejecuta el comando:
+
 ```
 make
 ```
-Este comando compilará tu código y generará una serie de archivos de pruebas llamados "runTest#", donde # será un número de prueba. Para ejecutar prueba, solo deberás ejecutar el archivos correcto. Por ejemplo, si quiere revisar si mi código cumple con la prueba número 3, deberías ejecutar:
+
+Este comando compilará tu código y generará una serie de archivos de pruebas. Para ejecutar una prueba específica, solo deberás ejecutar el comando correcto. Por ejemplo, si quiere revisar si tu código cumple con la prueba número 3, deberías ejecutar:
+
 ```
-./runTest3
+make test3
 ```
 
 ## <span style="color: rgb(26, 99, 169);">**¿Bajo qué criterios se evalúa mi evidencia?**</span>
 
-- **80%** - Para cada una de las funcionalidades se evaluará:
+- **70%** - Lista de 4 casos de prueba para cada una de las funcionalidades donde para cada una se evaluará:
 
-    - **Excelente (80%)** - pasa correctamente todos los casos de prueba.
-    - **Muy Bien (60%)** - pasa correctamente el 75% de los casos de prueba.
-    - **Bien (40%)** - pasa correctamente el 50% de los casos de prueba.
-    - **Insuficiente (20%)** - pasa correctamente menos del 50% de los casos de prueba.
+  - Excelente (70%) - evalúa correctamente los 4 casos de prueba.
+  - Muy Bien (55%) - evalúa correctamente 3 casos de prueba.
+  - Bien (40%) - evalúa correctamente 2 casos de prueba
+  - Insuficientre (25%) - evalúa correctamente 1 o 0 casos de prueba.
 
+-**10%** - Especifican en cada uno de las funcionalidades la complejidad computacional como parte de su documentación.
 
-- **10%** - El código deberá seguir los lineamientos estipulados en el estándar de codificación: <span class="instructure_file_holder link_holder">[liga_estándar_codificación](estandar.pdf)</span>
-- **10%** - Se respetan los nombres de las funciones en la aplicación.
+-**10%** - El código deberá seguir los lineamientos estipulados en el estándar de codificación: liga_estándar_codificación Descargar liga_estándar_codificación .
+
+-**10%** - Se respetenan los nombres de las funciones en la aplicación.
 
 ## <span style="color: rgb(26, 99, 169);">**¿Dónde la entrego?**</span>
-Cuando hayas pasado todas las pruebas, recuerda publicar el código en tu repositorio (*git push*).
+
+Cuando hayas pasado todas las pruebas, recuerda publicar el código en tu repositorio (_git push_).
