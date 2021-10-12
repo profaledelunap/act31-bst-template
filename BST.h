@@ -9,10 +9,7 @@
 #define BST_H
 
 #include <iostream>
-#include <sstream>
-#include <string>
-#include "exception.h"
-#include "header.h"
+using namespace std;
 #include "NodeBST.h"
 
 // =================================================================
@@ -28,17 +25,21 @@ public:
     void remove(int data);
     void print(int recorrido);
     int size();
+    int getLevel(int data);
+    void ancestors(NodeBST *node);
+    int height();
 
 private:
     NodeBST *root;
-    int howManyChildren(NodeBST *r);
-    int succesor(NodeBST *r);
-    int predecesor(NodeBST *r);
-    void preOrder(NodeBST *r);
-    void inOrder(NodeBST *r);
-    void postOrder(NodeBST *r);
-    void clear(NodeBST *r);
-    int sizeHelper(NodeBST *r);
+    int howManyChildren(NodeBST *node);
+    int succesor(NodeBST *node);
+    int predecesor(NodeBST *node);
+    void preOrder(NodeBST *node);
+    void inOrder(NodeBST *node);
+    void postOrder(NodeBST *node);
+    void levelByLevel(NodeBST *node);
+    void clear(NodeBST *node);
+    int sizeHelper(NodeBST *node);
 };
 
 // =================================================================
@@ -77,10 +78,10 @@ void BST::clear(NodeBST *r)
 // =================================================================
 int BST::succesor(NodeBST *r)
 {
-    NodeBST *curr = r->getRight();      
+    NodeBST *curr = r->getRight();
     while (curr->getLeft() != nullptr)
     {
-        curr = curr->getLeft(); 
+        curr = curr->getLeft();
     }
     return curr->getData();
 }
@@ -92,8 +93,8 @@ int BST::succesor(NodeBST *r)
 // =================================================================
 int BST::predecesor(NodeBST *r)
 {
-    NodeBST *curr = r->getLeft(); 
-    while (curr->getRight() != nullptr) 
+    NodeBST *curr = r->getLeft();
+    while (curr->getRight() != nullptr)
     {
         curr = curr->getRight();
     }
@@ -179,11 +180,11 @@ void BST::remove(int data)
     case 0:
         if (father == nullptr)
         {
-            root = nullptr; 
+            root = nullptr;
         }
         else
         {
-            if (data < father->getData()) 
+            if (data < father->getData())
             {
                 father->setLeft(nullptr);
             }
@@ -370,7 +371,12 @@ int BST::sizeHelper(NodeBST *node)
 // =================================================================
 void BST::levelByLevel(NodeBST *node)
 {
-
+    if (node != nullptr)
+    {
+        cout << node->getData() << " ";
+        postOrder(node->getLeft());
+        postOrder(node->getRight());
+    }
 }
 
 // =================================================================
@@ -380,16 +386,15 @@ void BST::levelByLevel(NodeBST *node)
 // =================================================================
 int BST::height()
 {
-
+    return 0;
 }
 
 // =================================================================
 // Prints the ancestros of a node in the BST.
 //
 // =================================================================
-void BST::ancestors()
+void BST::ancestors(NodeBST *node)
 {
-
 }
 
 // =================================================================
@@ -400,7 +405,7 @@ void BST::ancestors()
 // =================================================================
 int BST::getLevel(int data)
 {
-
+    return 0;
 }
 
 #endif /* BST_H */
