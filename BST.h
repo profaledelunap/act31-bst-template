@@ -26,7 +26,7 @@ public:
     void print(int recorrido);
     int size();
     int getLevel(int data);
-    void ancestors(NodeBST *node);
+    void ancestors(int data);
     int height();
 
 private:
@@ -387,7 +387,7 @@ int BST::height()
 // Prints the ancestros of a node in the BST.
 //
 // =================================================================
-void BST::ancestors(NodeBST *node)
+void BST::ancestors(int data)
 {
 }
 
