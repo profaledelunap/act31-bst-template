@@ -28,9 +28,9 @@ Las funciones que debes implementar son:
 
 2. ` int BST::height()`
    Regresará la altura del BST.
-3. ` void BST::ancestors(NodeBST node)`
+3. ` void BST::ancestors(NodeBST *node)`
    Desplegará los ancestros de un dato.
-4. ` int BST::getLevel(NodeBST node)`
+4. ` int BST::getLevel(NodeBST *node)`
    Regresará un entero que indica el nivel en que se encuentra un dato, o -1 en caso de que no se encuentre en el BST.
 
 <br>Todas las funcionalidades deberán de estar correctamente alineadas y documentadas.&nbsp; Recuerda que todas las funcionalidades deberán pasar exitosamente todas las pruebas. Como parte de la documentación deberá incluirse la complejidad de cada una de ellas.
