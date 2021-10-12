@@ -371,12 +371,6 @@ int BST::sizeHelper(NodeBST *node)
 // =================================================================
 void BST::levelByLevel(NodeBST *node)
 {
-    if (node != nullptr)
-    {
-        cout << node->getData() << " ";
-        postOrder(node->getLeft());
-        postOrder(node->getRight());
-    }
 }
 
 // =================================================================
