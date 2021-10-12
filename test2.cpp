@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 #include <string>
 #include "catch.h"
-#include "bst.h"
+#include "BST.h"
 
 TEST_CASE("testing leaves", "[leaves]")
 {
