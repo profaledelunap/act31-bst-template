@@ -26,7 +26,7 @@ Las funciones que debes implementar son:
 - Postorder
 - Level by level
 
-2. ` void BST::height()`
+2. ` int BST::height()`
    Regresará la altura del BST.
 3. ` void BST::ancestors(NodeBST node)`
    Desplegará los ancestros de un dato.
