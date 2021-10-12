@@ -9,7 +9,7 @@ TEST_CASE("testing byLevel", "[byLevel]")
 {
   vector<int> output, solution;
 
-  read(output, "output1.txt");
+  read(output, "test1output.txt");
   read(solution, "mysolution1.txt");
 
   REQUIRE(output == solution);
